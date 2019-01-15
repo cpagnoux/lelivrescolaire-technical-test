@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import DeletionConfirmation from '../containers/DeletionConfirmation';
 import Panel from '../containers/Panel';
 import StudentForm from '../containers/StudentForm.js';
@@ -18,6 +19,7 @@ const styles = theme => ({
 
 const App = ({ classes }) => (
   <div className={classes.root}>
+    <CssBaseline />
     <Panel title="Classe de 3e" />
     <main className={classes.content}>
       <StudentList />

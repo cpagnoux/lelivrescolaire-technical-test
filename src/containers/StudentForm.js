@@ -112,7 +112,7 @@ class StudentForm extends React.Component {
             />
             <TextField
               id="student-address-street"
-              label="Rue et numéro"
+              label="Adresse (rue et numéro)"
               name="addressStreet"
               type="text"
               defaultValue={defaultObject.address.street}

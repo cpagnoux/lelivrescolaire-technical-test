@@ -19,6 +19,9 @@ const styles = theme => ({
     width: drawerWidth,
   },
   toolbar: theme.mixins.toolbar,
+  title: {
+    margin: theme.spacing.unit * 2,
+  },
   fab: {
     margin: theme.spacing.unit,
   },
@@ -38,7 +41,12 @@ const Panel = ({ title, openStudentForm, classes }) => (
     classes={{ paper: classes.drawerPaper }}
   >
     <div className={classes.toolbar}>
-      <Typography component="h1" variant="h4">
+      <Typography
+        className={classes.title}
+        component="h1"
+        variant="h4"
+        color="primary"
+      >
         {title}
       </Typography>
     </div>

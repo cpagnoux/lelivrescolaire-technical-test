@@ -15,7 +15,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const styles = theme => ({
   card: {
     display: 'inline-block',
-    margin: 10,
+    margin: theme.spacing.unit,
     width: 200,
   },
   media: {
@@ -52,14 +52,14 @@ class Student extends React.Component {
 
     return (
       <Card className={classes.card}>
-        <CardActionArea>
+        <CardActionArea onClick={this.handleExpandClick}>
           <CardMedia
             className={classes.media}
             image={`https://robohash.org/${name}.png?size=200x200`}
             title={name}
           />
           <CardContent>
-            <Typography component="h2" variant="h6">
+            <Typography component="h2" variant="h6" color="primary">
               {name}
             </Typography>
           </CardContent>
@@ -85,14 +85,18 @@ class Student extends React.Component {
         </CardActions>
         <Collapse in={this.state.expanded} unmountOnExit>
           <CardContent>
+            <Typography component="h3" variant="subtitle2" color="secondary">
+              Adresse :
+            </Typography>
             <Typography paragraph>
-              <strong>Adresse :</strong><br />
               {address.street}<br />
               {address.suite}<br />
               {address.city}, {address.zipcode}
             </Typography>
+            <Typography component="h3" variant="subtitle2" color="secondary">
+              Téléphone des parents :
+            </Typography>
             <Typography paragraph>
-              <strong>Téléphone des parents :</strong><br />
               {phone}
             </Typography>
           </CardContent>
