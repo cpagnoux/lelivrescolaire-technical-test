@@ -8,6 +8,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const styles = theme => ({
@@ -39,7 +41,14 @@ class Student extends React.Component {
   };
 
   render() {
-    const { name, address, phone, classes } = this.props;
+    const {
+      name,
+      address,
+      phone,
+      editAction,
+      deleteAction,
+      classes
+    } = this.props;
 
     return (
       <Card className={classes.card}>
@@ -56,6 +65,12 @@ class Student extends React.Component {
           </CardContent>
         </CardActionArea>
         <CardActions>
+          <IconButton onClick={editAction} aria-label="Éditer">
+            <EditIcon />
+          </IconButton>
+          <IconButton onClick={deleteAction} aria-label="Supprimer">
+            <DeleteIcon />
+          </IconButton>
           <IconButton
             className={{
               [classes.expand]: true,

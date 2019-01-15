@@ -5,6 +5,8 @@ import {
   DELETE_STUDENT,
   OPEN_STUDENT_FORM,
   CLOSE_STUDENT_FORM,
+  OPEN_DELETION_CONFIRMATION,
+  CLOSE_DELETION_CONFIRMATION,
 } from './actions';
 import studentFixture from './students.json';
 
@@ -64,7 +66,27 @@ const studentForm = (state = initialStudentForm, action) => {
   }
 };
 
+const initialDeletionConfirmation = {
+  id: null,
+};
+
+const deletionConfirmation = (state = initialDeletionConfirmation, action) => {
+  switch (action.type) {
+    case OPEN_DELETION_CONFIRMATION:
+      return {
+        id: action.id,
+      };
+    case CLOSE_DELETION_CONFIRMATION:
+      return {
+        id: null,
+      };
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   students,
   studentForm,
+  deletionConfirmation,
 });

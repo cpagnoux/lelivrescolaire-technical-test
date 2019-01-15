@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import DeletionConfirmation from '../containers/DeletionConfirmation';
 import Panel from '../containers/Panel';
 import StudentForm from '../containers/StudentForm.js';
 import StudentList from '../containers/StudentList';
@@ -22,6 +23,7 @@ const App = ({ classes }) => (
       <StudentList />
     </main>
     <StudentForm />
+    <DeletionConfirmation />
   </div>
 );
 
