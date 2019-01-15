@@ -20,7 +20,7 @@ const StudentList = ({ students, openStudentForm, openDeletionConfirmation }) =>
         name={student.name}
         address={student.address}
         phone={student.phone}
-        editAction={openStudentForm}
+        editAction={() => openStudentForm(student)}
         deleteAction={() => openDeletionConfirmation(student.id)}
       />
     ))}
