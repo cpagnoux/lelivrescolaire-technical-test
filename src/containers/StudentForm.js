@@ -106,6 +106,7 @@ class StudentForm extends React.Component {
               name="name"
               type="text"
               defaultValue={defaultObject.name}
+              required
               margin="dense"
               fullWidth
               autoFocus
@@ -116,6 +117,7 @@ class StudentForm extends React.Component {
               name="addressStreet"
               type="text"
               defaultValue={defaultObject.address.street}
+              required
               margin="dense"
               fullWidth
             />
@@ -135,6 +137,7 @@ class StudentForm extends React.Component {
               name="addressCity"
               type="text"
               defaultValue={defaultObject.address.city}
+              required
               margin="dense"
             />
             <TextField
@@ -144,6 +147,7 @@ class StudentForm extends React.Component {
               name="addressZipcode"
               type="text"
               defaultValue={defaultObject.address.zipcode}
+              required
               margin="dense"
             />
             <TextField
@@ -153,6 +157,7 @@ class StudentForm extends React.Component {
               name="phone"
               type="text"
               defaultValue={defaultObject.phone}
+              required
               margin="dense"
             />
           </DialogContent>
