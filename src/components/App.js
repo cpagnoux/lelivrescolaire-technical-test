@@ -1,6 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Panel from './Panel';
+import Panel from '../containers/Panel';
+import StudentForm from '../containers/StudentForm.js';
 import StudentList from '../containers/StudentList';
 
 const styles = theme => ({
@@ -20,6 +21,7 @@ const App = ({ classes }) => (
     <main className={classes.content}>
       <StudentList />
     </main>
+    <StudentForm />
   </div>
 );
 

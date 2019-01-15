@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Student from '../components/Student';
 
 const mapStateToProps = state => ({
-  students: state,
+  students: state.students.items,
 });
 
 const StudentList = ({ students }) => (

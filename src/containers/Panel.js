@@ -1,10 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Fab from '@material-ui/core/Fab';
 import Typography from '@material-ui/core/Typography';
 import AddIcon from '@material-ui/icons/Add';
+import { openStudentForm } from '../actions';
 
 const drawerWidth = 240;
 
@@ -25,7 +27,11 @@ const styles = theme => ({
   },
 });
 
-const Panel = ({ title, classes }) => (
+const mapDispatchToProps = dispatch => ({
+  openStudentForm: () => dispatch(openStudentForm()),
+});
+
+const Panel = ({ title, openStudentForm, classes }) => (
   <Drawer
     className={classes.drawer}
     variant="permanent"
@@ -39,8 +45,9 @@ const Panel = ({ title, classes }) => (
     <Divider />
     <Fab
       className={classes.fab}
-      color="primary"
       variant="extended"
+      color="primary"
+      onClick={openStudentForm}
       aria-label="Ajouter"
     >
       <AddIcon className={classes.extendedIcon} />
@@ -49,4 +56,9 @@ const Panel = ({ title, classes }) => (
   </Drawer>
 );
 
-export default withStyles(styles)(Panel);
+export default withStyles(styles)(
+  connect(
+    null,
+    mapDispatchToProps,
+  )(Panel),
+);
