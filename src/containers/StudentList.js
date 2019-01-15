@@ -1,5 +1,10 @@
 import React from 'react';
-import Student from './Student';
+import { connect } from 'react-redux';
+import Student from '../components/Student';
+
+const mapStateToProps = state => ({
+  students: state,
+});
 
 const StudentList = ({ students }) => (
   <div>
@@ -14,4 +19,6 @@ const StudentList = ({ students }) => (
   </div>
 );
 
-export default StudentList;
+export default connect(
+  mapStateToProps,
+)(StudentList);

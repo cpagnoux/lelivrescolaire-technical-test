@@ -1,14 +1,13 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import StudentList from './StudentList';
-import students from '../students.json';
+import StudentList from '../containers/StudentList';
 
 const App = () => (
   <div>
     <Typography variant="h1" align="center">
       Classe de 3e
     </Typography>
-    <StudentList students={students} />
+    <StudentList />
   </div>
 );
 
