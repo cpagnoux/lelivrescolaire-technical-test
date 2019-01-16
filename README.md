@@ -1,3 +1,27 @@
+# Lelivrescolaire.fr technical test
+
+## What have been done
+
+*   Loading students from a fixture and displaying them.
+*   Ability to add or edit a student.
+*   Ability to delete a student.
+
+## What could be improved
+
+*   Make all cards the same height independently of the length of the student
+    name.
+*   Mobile support (the drawer is always permanent among other things).
+*   The StudentForm container could be refactored into a component just in
+    charge of rendering the form. Two containers could then be created to
+    implement the behaviours of adding/updating a student.
+*   It would be better if a newly added student was put into evidence on the
+    screen (e.g. with some sort of blink effect).
+*   Querying the fixture from its URL
+    [http://jsonplaceholder.typicode.com/users](http://jsonplaceholder.typicode.com/users)
+    using redux-saga to handle the asynchronous request.
+
+# Documentation from Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
