@@ -23,6 +23,9 @@ const styles = theme => ({
 
 const mapStateToProps = state => ({
   id: state.deletionConfirmation.id,
+  student: state.students.items.find(
+    s => s.id === state.deletionConfirmation.id,
+  ),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -35,11 +38,13 @@ const mapDispatchToProps = dispatch => ({
 
 const DeletionConfirmation = ({
   id,
+  student,
   deleteStudent,
   closeDeletionConfirmation,
   classes,
 }) => {
   const open = id ? true : false;
+  const name = student ? student.name : '';
 
   return (
     <Dialog
@@ -53,7 +58,7 @@ const DeletionConfirmation = ({
       </DialogTitle>
       <DialogContent>
         <Typography component="p">
-          Êtes-vous sûr(e) de vouloir retirer cet élève de la classe ?
+          Êtes-vous sûr(e) de vouloir retirer l'élève {name} de la classe ?
         </Typography>
       </DialogContent>
       <DialogActions>
