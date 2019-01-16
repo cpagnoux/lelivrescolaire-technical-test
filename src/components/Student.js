@@ -90,7 +90,7 @@ class Student extends React.Component {
             </Typography>
             <Typography paragraph>
               {address.street}<br />
-              {address.suite ? `${address.suite}<br />` : ''}
+              {!!address.suite && <>{address.suite}<br /></>}
               {address.city}, {address.zipcode}
             </Typography>
             <Typography component="h3" variant="subtitle2" color="secondary">
