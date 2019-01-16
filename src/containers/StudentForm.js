@@ -155,7 +155,7 @@ class StudentForm extends React.Component {
               id="student-phone"
               label="Téléphone des parents"
               name="phone"
-              type="text"
+              type="tel"
               defaultValue={defaultObject.phone}
               required
               margin="dense"
