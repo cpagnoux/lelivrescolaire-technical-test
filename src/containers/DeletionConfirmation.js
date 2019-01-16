@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -7,6 +8,15 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Typography from '@material-ui/core/Typography';
 import { deleteStudent, closeDeletionConfirmation } from '../actions';
+
+const styles = theme => ({
+  danger: {
+    backgroundColor: theme.palette.error.main,
+    '&:hover': {
+      backgroundColor: theme.palette.error.dark,
+    },
+  },
+});
 
 const mapStateToProps = state => ({
   id: state.deletionConfirmation.id,
@@ -23,7 +33,8 @@ const mapDispatchToProps = dispatch => ({
 const DeletionConfirmation = ({
   id,
   deleteStudent,
-  closeDeletionConfirmation
+  closeDeletionConfirmation,
+  classes,
 }) => {
   const open = id ? true : false;
 
@@ -43,18 +54,25 @@ const DeletionConfirmation = ({
         </Typography>
       </DialogContent>
       <DialogActions>
-        <Button color="primary" onClick={() => deleteStudent(id)}>
-          Supprimer
-        </Button>
         <Button onClick={closeDeletionConfirmation}>
           Annuler
+        </Button>
+        <Button
+          className={classes.danger}
+          variant="contained"
+          color="primary"
+          onClick={() => deleteStudent(id)}
+        >
+          Supprimer
         </Button>
       </DialogActions>
     </Dialog>
   );
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(DeletionConfirmation);
+export default withStyles(styles)(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )(DeletionConfirmation),
+);

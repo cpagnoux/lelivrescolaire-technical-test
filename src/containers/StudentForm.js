@@ -165,7 +165,7 @@ class StudentForm extends React.Component {
             <Button onClick={closeStudentForm}>
               Annuler
             </Button>
-            <Button color="primary" type="submit">
+            <Button variant="contained" color="primary" type="submit">
               {submitButtonText}
             </Button>
           </DialogActions>
@@ -179,5 +179,5 @@ export default withStyles(styles)(
   connect(
     mapStateToProps,
     mapDispatchToProps,
-  )(StudentForm)
+  )(StudentForm),
 );
