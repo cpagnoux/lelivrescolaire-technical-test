@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import Fab from '@material-ui/core/Fab';
-import Typography from '@material-ui/core/Typography';
-import AddIcon from '@material-ui/icons/Add';
+import {
+  Divider,
+  Drawer,
+  Fab,
+  Typography,
+} from '@material-ui/core';
+import { Add as AddIcon } from '@material-ui/icons';
+
 import { openStudentForm } from '../actions';
 
 const drawerWidth = 240;

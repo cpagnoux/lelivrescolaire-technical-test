@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import { openStudentForm, openDeletionConfirmation } from '../actions';
 import Student from '../components/Student';
 

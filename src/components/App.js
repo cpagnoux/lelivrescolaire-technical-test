@@ -1,6 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { CssBaseline } from '@material-ui/core';
+
 import DeletionConfirmation from '../containers/DeletionConfirmation';
 import Panel from '../containers/Panel';
 import StudentForm from '../containers/StudentForm.js';
