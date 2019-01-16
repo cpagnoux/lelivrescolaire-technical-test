@@ -63,7 +63,7 @@ class Student extends React.Component {
             title={name}
           />
           <CardContent>
-            <Typography component="h2" variant="h6" color="primary">
+            <Typography component="h2" variant="subtitle1" color="primary">
               {name}
             </Typography>
           </CardContent>
